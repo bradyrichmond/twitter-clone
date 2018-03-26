@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = '/api/tweets';
+const API_URL = process.env.API_URL || 'http://localhost:3001/api/tweets';
 
 // GET
 export const FETCH_TWEETS_REQUEST = 'FETCH_TWEETS_REQUEST';

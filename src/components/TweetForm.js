@@ -12,9 +12,11 @@ var formatDate = () => {
     var year = dto.getFullYear();
     var hour = dto.getHours();
     var minute = dto.getMinutes();
+    var pm = hour > 12;
 
     hour = hour > 12 ? hour % 12 : hour;
-    var dateString = `${month} ${day}, ${year} ${hour}:${minute}`;
+    hour = hour === 0 ? 12 : hour;
+    var dateString = `${month} ${day}, ${year} ${hour}:${minute} ${pm ? 'PM' : 'AM'}`;
     return dateString;
 }
 

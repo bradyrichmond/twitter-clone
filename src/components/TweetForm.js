@@ -3,6 +3,7 @@ import style from '../style';
 import { connect } from 'react-redux';
 import { tweetTextChanged, postTweet } from '../actions';
 import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom'
 
 var formatDate = () => {
     var dto = new Date();
@@ -66,6 +67,7 @@ class TweetForm extends Component {
         tweet.timestamp = formatDate();
 
         this.props.dispatch(postTweet(tweet));
+        this.props.history.push('/');
     }
 
     render() {
@@ -99,4 +101,4 @@ const mapStateToProps = (state) => {
     };
 };
 
-export default connect(mapStateToProps)(TweetForm);
+export default connect(mapStateToProps)(withRouter(TweetForm));

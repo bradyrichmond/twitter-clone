@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = process.env.API_URL || 'http://localhost:3001/api/tweets';
+const API_URL = '/api/tweets';
 
 // GET
 export const FETCH_TWEETS_REQUEST = 'FETCH_TWEETS_REQUEST';
@@ -25,7 +25,8 @@ export const fetchTweets = () => dispatch => {
     return axios.get(API_URL)
         .then(({ data }) => {
             dispatch(fetchTweetsSuccess(data));
-        }).catch(res => {
+        })
+        .catch(res => {
             dispatch(fetchTweetsFailure());
         });
 }
@@ -106,9 +107,9 @@ export const deleteTweet = (tweet) => dispatch => {
     axios.delete(`${API_URL}/${tweet._id}`).then(() => {
         dispatch(deleteTweetSuccess());
     })
-        .catch(err => {
-            dispatch(deleteTweetFailure());
-        });
+    .catch(err => {
+        dispatch(deleteTweetFailure());
+    });
 }
 
 export const deleteTweetRequest = () => {

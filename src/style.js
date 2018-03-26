@@ -4,10 +4,6 @@ const style = {
         margin: '0 auto',
         fontFamily: 'Helvetica, sans-serif'
     },
-    title: {
-        textAlign: 'center',
-        textTransform: 'uppercase'
-    },
     tweetList: {
         border: '1px solid #f1f1f1',
         padding: '0 12px',
@@ -25,14 +21,6 @@ const style = {
         display: 'flex',
         flexFlow: 'row wrap',
         justifyContent: 'space-between'
-    },
-    tweetFormAuthor: {
-        minWidth: '150px',
-        margin: '3px',
-        padding: '0 10px',
-        borderRadius: '3px',
-        height: '40px',
-        flex: '2'
     },
     tweetFormText: {
         flex: '4',
@@ -54,11 +42,6 @@ const style = {
         textTransform: 'uppercase',
         letterSpacing: '.055rem',
         border: 'none'
-    },
-    updateLink: {
-        textDecoration: 'none',
-        paddingRight: '15px',
-        fontSize: '.7rem'
     },
     deleteLink: {
         textDecoration: 'none',
